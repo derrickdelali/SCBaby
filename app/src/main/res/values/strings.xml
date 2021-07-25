@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SCBaby</string>
+    <string-array name="country_array">
+        <item>Select Country</item>
+        <item>Ghana</item>
+        <item>Nigeria</item>
+        <item>Kenya</item>
+        <item>Uganda</item>
+    </string-array>
+    <string-array name="sex_array">
+        <item>Sex</item>
+        <item></item>
+        <item>Male</item>
+        <item></item>
+        <item>Female</item>
+    </string-array>
+    <string name="dialog_title">Pop Up Dialog</string>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "122687083696",
+    "project_id": "scbaby-9e263",
+    "storage_bucket": "scbaby-9e263.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122687083696:android:3d522b1a892949ca131775",
+        "android_client_info": {
+          "package_name": "com.example.scbaby"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "122687083696-o23iorj3vp0mipj3fbht8f1kbj1l36hs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADZrh1_H3P4qABL_wa_vaPh7NUwCxNTUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "122687083696-o23iorj3vp0mipj3fbht8f1kbj1l36hs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
