@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_background3"
-    tools:context=".MainActivity">
+    tools:context="scbaby.app.scbaby.MainActivity">
 
     <TextView
         android:id="@+id/textView13"

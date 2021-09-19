@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.scbaby">
-<uses-permission android:name="android.permission.RECORD_AUDIO">
-</uses-permission>
+    package="com.app.scbaby">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,28 +14,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SCBaby">
-        <activity android:name=".Feedback_Message"
-            android:theme="@style/AppTheme.FullScreen"></activity>
         <activity
-            android:name=".More_Information"
+            android:name=".CryRecognition"
+            android:theme="@style/AppTheme.FullScreen"
+            android:exported="true" />
+        <activity
+            android:name="scbaby.app.scbaby.New_Child"
+            android:exported="true"
             android:theme="@style/AppTheme.FullScreen" />
         <activity
-            android:name=".Cry_Recognition"
+            android:name="scbaby.app.scbaby.Feedback_Message"
             android:theme="@style/AppTheme.FullScreen" />
         <activity
-            android:name=".Record"
+            android:name="scbaby.app.scbaby.More_Information"
             android:theme="@style/AppTheme.FullScreen" />
         <activity
-            android:name=".Disclaimer"
+            android:name="scbaby.app.scbaby.Record"
             android:theme="@style/AppTheme.FullScreen" />
         <activity
-            android:name=".Login"
+            android:name="scbaby.app.scbaby.Disclaimer"
             android:theme="@style/AppTheme.FullScreen" />
         <activity
-            android:name=".Register"
+            android:name="scbaby.app.scbaby.Login"
             android:theme="@style/AppTheme.FullScreen" />
         <activity
-            android:name=".MainActivity"
+            android:name="scbaby.app.scbaby.Register"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity
+            android:name="scbaby.app.scbaby.MainActivity"
             android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_background3"
-    tools:context=".Disclaimer">
+    tools:context="scbaby.app.scbaby.Disclaimer">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,8 +19,10 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="-140dp"
                 android:text="Disclaimer"
                 android:textColor="@color/black"
                 android:textSize="34sp"
@@ -29,23 +30,42 @@
 
             <TextView
                 android:id="@+id/textView11"
-                android:layout_width="300dp"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="20dp"
-                android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.  "
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="150dp"
+                android:inputType="textMultiLine"
+                android:text="In order to use this app, you are required to have the following
+                \n
+                \n1. A Crying Baby
+                \n2. This app installed on your mobile device
+                \n3. Allow Microphone permissions when prompted.
+                \n
+                \nPlease note that this app will use your microphone to record and recognise your baby cry  to help you identify what exactly is wrong with him/her.
+                \n
+                \nThis app will not in any way record you without your permission.
+                \n
+                \nAlso all recordings of your baby cry will be sent into a database that will be used for future  research work to help improve this app.
+                \n
+                \nWe will not share your information without your consent.
+                \n
+                \nWe hope you enjoy using this app and it serves you well in soothing your baby the right way when he/she is crying.
+                \n
+                \nEnjoy."
                 android:textSize="16sp" />
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="70dp"
                 android:layout_marginLeft="65dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="20dp"
                 android:onClick="onClick"
                 android:text="Start"
                 android:textSize="12sp"
-                app:backgroundTint="#F8012387"
+                app:backgroundTint="#0000ff"
+                app:cornerRadius="10dp"
                 app:elevation="20dp" />
         </LinearLayout>
     </ScrollView>

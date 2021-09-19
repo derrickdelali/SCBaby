@@ -1,4 +1,4 @@
-package com.example.scbaby;
+package scbaby.app.scbaby;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.app.scbaby.R;
+
 public class Disclaimer extends AppCompatActivity {
 
     private int Record_Audio = 1;
@@ -26,13 +28,14 @@ public class Disclaimer extends AppCompatActivity {
 
     public void onClick(View view) {
         if (ContextCompat.checkSelfPermission(Disclaimer.this,
-                Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_DENIED){
-            Toast.makeText(this, "You denied microphone permissions", Toast.LENGTH_SHORT).show();
-                Request_record_audioPermission();
-        }
-        else {
+                Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED){
+
             Intent intent = new Intent(Disclaimer.this, Record.class);
             startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "You denied microphone permissions", Toast.LENGTH_SHORT).show();
+            Request_record_audioPermission();
         }
     }
 

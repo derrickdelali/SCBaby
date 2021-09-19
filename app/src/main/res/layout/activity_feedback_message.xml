@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_background3"
-    tools:context=".Feedback_Message">
+    tools:context="scbaby.app.scbaby.Feedback_Message">
 
     <TextView
         android:id="@+id/textView28"
@@ -14,7 +13,6 @@
         android:layout_marginTop="228dp"
         android:text="Thank You"
         android:textAllCaps="true"
-        android:textColor="#F8012387"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,13 +34,14 @@
     <Button
         android:id="@+id/button6"
         android:layout_width="280dp"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:layout_marginTop="28dp"
         android:onClick="onClick"
         android:text="Record a New Cry"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        app:backgroundTint="#F8012387"
+        app:backgroundTint="#0000ff"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView30" />
@@ -59,20 +58,19 @@
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/feedback"
         android:layout_width="280dp"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:layout_marginTop="4dp"
+        android:background="@drawable/spinner_outline"
         android:onClick="onExit"
-        android:text="Exit"
+        android:text="Logout"
         android:textAllCaps="false"
         android:textColor="#000000"
-        app:backgroundTint="#00FFFFFF"
+        app:backgroundTint="@empty"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:rippleColor="#00FFFFFF"
-        app:strokeColor="#213CC5"
-        app:strokeWidth="2dp" />
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

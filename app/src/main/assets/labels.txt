@@ -1,0 +1,5 @@
+bellypain,
+burping,
+discomfort,
+tired,
+hungry

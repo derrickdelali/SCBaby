@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="scbaby.app.scbaby.New_Child">
+
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/textView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="30dp"
+          android:layout_marginTop="300dp"
+          android:layout_marginBottom="4dp"
+          android:text="Child's Name"
+          android:textColor="#000000" />
+
+      <EditText
+          android:id="@+id/edtName"
+          android:layout_width="350dp"
+          android:layout_height="60dp"
+          android:layout_gravity="center"
+          android:layout_marginLeft="0dp"
+          android:layout_marginTop="0dp"
+          android:background="@drawable/input_outline"
+          android:ems="10"
+          android:hint="Enter Child Full Name"
+          android:inputType="textPersonName"
+          android:paddingLeft="15dp"
+          android:textSize="16sp" />
+
+      <TextView
+          android:id="@+id/textView2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="30dp"
+          android:layout_marginTop="12dp"
+          android:text="Date of Birth"
+          android:textColor="#000000" />
+
+      <EditText
+          android:id="@+id/edtDOB"
+          android:layout_width="350dp"
+          android:layout_height="60dp"
+          android:layout_gravity="center"
+          android:layout_marginLeft="0dp"
+          android:layout_marginTop="0dp"
+          android:background="@drawable/input_outline"
+          android:ems="10"
+          android:hint="DD/MM/YY"
+          android:inputType="date"
+          android:paddingLeft="15dp"
+          android:textSize="16sp" />
+
+      <TextView
+          android:id="@+id/textView4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="30dp"
+          android:layout_marginTop="12dp"
+          android:layout_marginBottom="5dp"
+          android:text="Gender"
+          android:textColor="#000000" />
+
+      <EditText
+          android:id="@+id/sex"
+          android:layout_width="350dp"
+          android:layout_height="60dp"
+          android:layout_gravity="center"
+          android:layout_marginLeft="0dp"
+          android:layout_marginTop="0dp"
+          android:background="@drawable/input_outline"
+          android:ems="10"
+          android:hint="Enter Gender of Child"
+          android:inputType="textPersonName"
+          android:paddingLeft="15dp"
+          android:textSize="16sp" />
+
+
+      <TextView
+          android:id="@+id/textView6"
+          android:layout_width="300dp"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="30dp"
+          android:layout_marginTop="-400dp"
+          android:text="New Child"
+          android:textSize="45sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/textView100"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="30dp"
+          android:layout_marginTop="10dp"
+          android:text="Register your new baby and let's get started"
+          android:textColor="#0000ff" />
+
+
+      <Button
+          android:id="@+id/button2"
+          android:layout_width="150dp"
+          android:layout_height="70dp"
+          android:layout_marginLeft="50dp"
+          android:layout_marginTop="330dp"
+          android:layout_marginBottom="-300dp"
+          android:onClick="onContinue"
+          android:text="Continue"
+          android:textAllCaps="false"
+          android:textColor="@color/white"
+          android:textSize="16sp"
+          android:textStyle="normal"
+          app:backgroundTint="#0000ff"
+          app:cornerRadius="10dp" />
+
+
+      <Button
+          android:id="@+id/button3"
+          android:layout_width="150dp"
+          android:layout_height="60dp"
+          android:layout_marginLeft="210dp"
+          android:layout_marginTop="235dp"
+          android:layout_marginBottom="-300dp"
+          android:onClick="onCancel"
+          android:text="Cancel"
+          android:textAllCaps="false"
+          android:textColor="#E91E63"
+          android:textSize="16sp"
+          android:textStyle="normal"
+          app:backgroundTint="@empty"
+          android:background="@drawable/spinner_outline"
+          app:cornerRadius="10dp" />
+
+    </LinearLayout>
+  </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.scbaby;
+package scbaby.app.scbaby;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.app.scbaby.R;
 
 public class More_Information extends AppCompatActivity {
 

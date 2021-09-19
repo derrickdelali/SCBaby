@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "122687083696",
-    "project_id": "scbaby-9e263",
-    "storage_bucket": "scbaby-9e263.appspot.com"
+    "project_number": "1041170511578",
+    "project_id": "scbaby-83a28",
+    "storage_bucket": "scbaby-83a28.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:122687083696:android:3d522b1a892949ca131775",
+        "mobilesdk_app_id": "1:1041170511578:android:2e3db6bbd75dbd226c57e3",
         "android_client_info": {
-          "package_name": "com.example.scbaby"
+          "package_name": "com.app.scbaby"
         }
       },
       "oauth_client": [
         {
-          "client_id": "122687083696-o23iorj3vp0mipj3fbht8f1kbj1l36hs.apps.googleusercontent.com",
+          "client_id": "1041170511578-htlnfod19rcketh8u5n7n7doociac7tm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyADZrh1_H3P4qABL_wa_vaPh7NUwCxNTUc"
+          "current_key": "AIzaSyAr8-54vuk9v3-LOiXGkJx9hDvH9Puj2bk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "122687083696-o23iorj3vp0mipj3fbht8f1kbj1l36hs.apps.googleusercontent.com",
+              "client_id": "1041170511578-htlnfod19rcketh8u5n7n7doociac7tm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="250dp"
     android:layout_height="350dp"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:background="#d9ffffff">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -15,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="#d9ffffff"
+        app:cardBackgroundColor="#ffffff"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,8 +29,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="68dp"
                 android:gravity="center"
-                android:text="Has your Baby Stopped Crying?"
-                android:textSize="14sp"
+                android:text="New Child?"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_background3"
-    tools:context=".Cry_Recognition">
+    tools:context=".CryRecognition">
 
     <ImageView
         android:id="@+id/imageView"
@@ -33,12 +32,13 @@
     <Button
         android:id="@+id/btn_More_Info"
         android:layout_width="280dp"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="68dp"
         android:onClick="onClick"
         android:text="More Information"
         android:textAllCaps="false"
-        app:backgroundTint="#F8012387"
+        app:backgroundTint="#0000ff"
+        app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="0.625" />
 
     <TextView
-        android:id="@+id/tvRec_Cry2"
+        android:id="@+id/result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -63,12 +63,30 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Click on the More Information Button bnelow to view what to do to make your baby stop crying"
+        android:text="Click on the More Information Button below to view what to do to make your baby stop crying"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRec_Cry2" />
+        app:layout_constraintTop_toBottomOf="@+id/result_text" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="160dp"
+        android:id="@+id/classify_button"
+        android:text="Classify"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.485" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

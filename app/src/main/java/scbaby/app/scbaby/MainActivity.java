@@ -1,15 +1,13 @@
-package com.example.scbaby;
+package scbaby.app.scbaby;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
+
+import com.app.scbaby.R;
 
 public class MainActivity extends AppCompatActivity {
 

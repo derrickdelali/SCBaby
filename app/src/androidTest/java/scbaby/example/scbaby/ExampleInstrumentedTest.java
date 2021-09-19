@@ -1,4 +1,4 @@
-package com.example.scbaby;
+package scbaby.example.scbaby;
 
 import android.content.Context;
 
