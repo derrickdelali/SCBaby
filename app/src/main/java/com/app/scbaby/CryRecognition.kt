@@ -34,8 +34,8 @@ class CryRecognition : AppCompatActivity() {
         //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         //  val languages = resources.getStringArray(R.array.Languages)
-        val externalStorage: File = File(getExternalFilesDir("/Android/data/com.app.scbaby/files/Documents"), "scbaby")
-        val audioDirPath = externalStorage.absolutePath + "/audioData";
+        val externalStorage: File = File(getExternalFilesDir(""), "")
+        val audioDirPath = externalStorage.absolutePath;
 
         val fileNames: MutableList<String> = ArrayList()
 
@@ -66,7 +66,7 @@ class CryRecognition : AppCompatActivity() {
 
                 val cry = findViewById<TextView>(R.id.result_text)
                 val result = classifyNoise(audioFilePath)
-                cry.text = "Predicted Noise : $result"
+                cry.text = "$result"
             }
             else{
                 Toast.makeText( this@CryRecognition, "Please enter a message.", Toast.LENGTH_LONG).show();
