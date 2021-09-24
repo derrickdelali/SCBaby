@@ -18,7 +18,6 @@ import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.app.scbaby.CryRecognition;
 import com.app.scbaby.R;
 

@@ -34,8 +34,14 @@ class CryRecognition : AppCompatActivity() {
         //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         //  val languages = resources.getStringArray(R.array.Languages)
+        val result_text = findViewById<TextView>(R.id.result_text)
+        val classify_button = findViewById<Button>(R.id.classify_button)
+
+
+        //  val languages = resources.getStringArray(R.array.Languages)
         val externalStorage: File = File(getExternalFilesDir(""), "")
-        val audioDirPath = externalStorage.absolutePath;
+
+        val audioDirPath = externalStorage.absolutePath
 
         val fileNames: MutableList<String> = ArrayList()
 
@@ -57,25 +63,24 @@ class CryRecognition : AppCompatActivity() {
 
         }
 
-        val classify = findViewById<Button>(R.id.classify_button)
 
-        classify.setOnClickListener({
+
+        classify_button.setOnClickListener( View.OnClickListener {
             val selFilePath = spinner.selectedItem.toString()
             var audioFilePath = audioDirPath + '/' + selFilePath;
             if ( !TextUtils.isEmpty( selFilePath ) ){
 
-                val cry = findViewById<TextView>(R.id.result_text)
+
                 val result = classifyNoise(audioFilePath)
-                cry.text = "$result"
+                result_text.text = "Predicted Cry : $result"
             }
             else{
                 Toast.makeText( this@CryRecognition, "Please enter a message.", Toast.LENGTH_LONG).show();
             }
         })
 
-        
-
     }
+
 
     fun classifyNoise ( audioFilePath: String ): String? {
 
@@ -84,16 +89,16 @@ class CryRecognition : AppCompatActivity() {
         val mChannels: Int
         var meanMFCCValues : FloatArray = FloatArray(1)
 
-        var predictedResult: String?
+        var predictedResult: String? = "Unknown"
 
-        var wavFile: WavFile?
+        var wavFile: WavFile? = null
         try {
             wavFile = WavFile.openWavFile(File(audioFilePath))
             mNumFrames = wavFile.numFrames.toInt()
             mSampleRate = wavFile.sampleRate.toInt()
             mChannels = wavFile.numChannels
             val buffer =
-                    Array(mChannels) { DoubleArray(mNumFrames) }
+                Array(mChannels) { DoubleArray(mNumFrames) }
 
             var frameOffset = 0
             val loopCounter: Int = mNumFrames * mChannels / 4096 + 1
@@ -122,7 +127,7 @@ class CryRecognition : AppCompatActivity() {
             val mfccInput = mfccConvert.process(meanBuffer)
             val nFFT = mfccInput.size / nMFCC
             val mfccValues =
-                    Array(nMFCC) { DoubleArray(nFFT) }
+                Array(nMFCC) { DoubleArray(nFFT) }
 
             //loop to convert the mfcc values into multi-dimensional array
             for (i in 0 until nFFT) {
@@ -167,12 +172,12 @@ class CryRecognition : AppCompatActivity() {
 
         //load the TFLite model in 'MappedByteBuffer' format using TF Interpreter
         val tfliteModel: MappedByteBuffer =
-                FileUtil.loadMappedFile(this, getModelPath())
+            FileUtil.loadMappedFile(this, getModelPath())
         val tflite: Interpreter
 
         /** Options for configuring the Interpreter.  */
         val tfliteOptions =
-                Interpreter.Options()
+            Interpreter.Options()
         tfliteOptions.setNumThreads(2)
         tflite = Interpreter(tfliteModel, tfliteOptions)
 
@@ -180,20 +185,20 @@ class CryRecognition : AppCompatActivity() {
         //for urban sound classification, input tensor should be of 1x40x1x1 shape
         val imageTensorIndex = 0
         val imageShape =
-                tflite.getInputTensor(imageTensorIndex).shape()
+            tflite.getInputTensor(imageTensorIndex).shape()
         val imageDataType: DataType = tflite.getInputTensor(imageTensorIndex).dataType()
         val probabilityTensorIndex = 0
         val probabilityShape =
-                tflite.getOutputTensor(probabilityTensorIndex).shape()
+            tflite.getOutputTensor(probabilityTensorIndex).shape()
         val probabilityDataType: DataType =
-                tflite.getOutputTensor(probabilityTensorIndex).dataType()
+            tflite.getOutputTensor(probabilityTensorIndex).dataType()
 
         //need to transform the MFCC 1d float buffer into 1x40x1x1 dimension tensor using TensorBuffer
         val inBuffer: TensorBuffer = TensorBuffer.createDynamic(imageDataType)
-            inBuffer.loadArray(meanMFCCValues, imageShape)
+        inBuffer.loadArray(meanMFCCValues, imageShape)
         val inpBuffer: ByteBuffer = inBuffer.getBuffer()
         val outputTensorBuffer: TensorBuffer =
-                TensorBuffer.createFixedSize(probabilityShape, probabilityDataType)
+            TensorBuffer.createFixedSize(probabilityShape, probabilityDataType)
         //run the predictions with input and output buffer tensors to get probability values across the labels
         tflite.run(inpBuffer, outputTensorBuffer.getBuffer())
 
@@ -209,17 +214,17 @@ class CryRecognition : AppCompatActivity() {
 
         //Tensor processor for processing the probability values and to sort them based on the descending order of probabilities
         val probabilityProcessor: TensorProcessor = TensorProcessor.Builder()
-                .add(NormalizeOp(0.0f, 255.0f)).build()
+            .add(NormalizeOp(0.0f, 255.0f)).build()
         if (null != associatedAxisLabels) {
             // Map of labels and their corresponding probability
             val labels = TensorLabel(
-                    associatedAxisLabels,
-                    probabilityProcessor.process(outputTensorBuffer)
+                associatedAxisLabels,
+                probabilityProcessor.process(outputTensorBuffer)
             )
 
             // Create a map to access the result based on label
             val floatMap: Map<String, Float> =
-                    labels.getMapWithFloatValue()
+                labels.getMapWithFloatValue()
 
             //function to retrieve the top K probability values, in this case 'k' value is 1.
             //retrieved values are storied in 'Recognition' object with label details.
@@ -251,10 +256,10 @@ class CryRecognition : AppCompatActivity() {
         // Find the best classifications.
         val MAX_RESULTS: Int = 1
         val pq: PriorityQueue<Recognition> = PriorityQueue(
-                MAX_RESULTS,
-                Comparator<Recognition> { lhs, rhs -> // Intentionally reversed to put high confidence at the head of the queue.
-                    java.lang.Float.compare(rhs.getConfidence(), lhs.getConfidence())
-                })
+            MAX_RESULTS,
+            Comparator<Recognition> { lhs, rhs -> // Intentionally reversed to put high confidence at the head of the queue.
+                java.lang.Float.compare(rhs.getConfidence(), lhs.getConfidence())
+            })
         for (entry in labelProb.entries) {
             pq.add(Recognition("" + entry.key, entry.key, entry.value))
         }
@@ -266,9 +271,4 @@ class CryRecognition : AppCompatActivity() {
         return recognitions
     }
 
-    fun onClick() {
-
-        val intent = Intent(this, More_Information::class.java)
-        startActivity(intent)
-    }
 }

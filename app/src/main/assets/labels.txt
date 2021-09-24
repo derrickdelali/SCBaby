@@ -1,5 +1,5 @@
-bellypain,
-burping,
-discomfort,
-tired,
+belly_pain
+burping
+discomfort
+tired
 hungry
